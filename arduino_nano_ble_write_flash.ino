@@ -104,6 +104,9 @@ void setup() {
   // Write the whole copy of our RAM buffer back into flash. 
   bd.program(ram_buffer, 0, kFlashBufferSize);
 
+  // Deallocate RAM buffer
+  free(ram_buffer);
+
   // Shut down our flash access object.
   bd.deinit();  
 }
